@@ -3,19 +3,19 @@ import HabitList from "./HabitList";
 
 export default function HabitsPage() {
   const [goals, setGoals] = useState(() => {
-    // Pokus načítať z localStorage
+    // loading save from localstorage
     const saved = localStorage.getItem("goals");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Uložíme do localStorage pri zmene
+  // save in localstorage
   useEffect(() => {
     localStorage.setItem("goals", JSON.stringify(goals));
   }, [goals]);
 
   return (
     <div className="flex flex-col gap-12 p-8 max-w-5xl mx-auto">
-      {/* Pre každý typ zobrazujeme jeden HabitList so správnym filtrom */}
+      {/*For every tip one list  */}
       <HabitList
         title="Daily Goals"
         filter="daily"

@@ -10,7 +10,10 @@ export function HabitItem({ date, title, done, toggleDone }) {
       <td className="px-4 py-2 text-center">{date}</td>
       <td className="px-4 py-2 text-center">{title}</td>
       <td className="px-4 py-2 text-center">
-        <button onClick={toggleDone} className="text-purple-600 hover:text-purple-800">
+        <button
+          onClick={toggleDone}
+          className="text-purple-600 hover:text-purple-800"
+        >
           <SquareCheck size={20} />
         </button>
       </td>

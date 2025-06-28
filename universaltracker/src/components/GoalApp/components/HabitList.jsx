@@ -4,8 +4,8 @@ import { CheckCircle, Trash2, Sparkles } from "lucide-react";
 export default function HabitList() {
   const [goals, setGoals] = useState([]);
   const [newGoal, setNewGoal] = useState("");
-  const [filter, setFilter] = useState("daily"); 
-  const [loadingAI, setLoadingAI] = useState(false); 
+  const [filter, setFilter] = useState("daily");
+  const [loadingAI, setLoadingAI] = useState(false);
 
   // load ll from localstorage
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function HabitList() {
     localStorage.setItem("goals", JSON.stringify(goals));
   }, [goals]);
 
-  // AI  tip 
+  // AI  tip
   const suggestGoal = async () => {
     setLoadingAI(true);
     try {
@@ -26,7 +26,7 @@ export default function HabitList() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          message: `Give me one short unique and creative ${filter} personal goal I could track. Reply with only the goal itself.`,
+          message: `Give me one short unique  ${filter} personal goal I could track. Reply with only the goal itself.`,
         }),
       });
       const data = await res.json();
@@ -78,30 +78,33 @@ export default function HabitList() {
       <h2 className="text-3xl font-extrabold text-purple-800 mb-6 text-center tracking-wide drop-shadow-sm">
         My {filter.charAt(0).toUpperCase() + filter.slice(1)} Goals
       </h2>
-      
-{/*progress bar */}
-{filteredGoals.length > 0 && (
-  <div className="mb-8">
-    <p className="text-sm text-gray-600 mb-1 text-center">
-      Progress:{" "}
-      {Math.round(
-        (filteredGoals.filter((g) => g.done).length / filteredGoals.length) * 100
-      )}
-      %
-    </p>
-    <div className="w-full h-4 bg-purple-100 rounded-full overflow-hidden">
-      <div
-        className="h-full bg-gradient-to-r from-green-300 to-green-500 transition-all duration-500"
-        style={{
-          width: `${
-            (filteredGoals.filter((g) => g.done).length / filteredGoals.length) * 100
-          }%`,
-        }}
-      />
-    </div>
-  </div>
-)}
 
+      {/*progress bar */}
+      {filteredGoals.length > 0 && (
+        <div className="mb-8">
+          <p className="text-sm text-gray-600 mb-1 text-center">
+            Progress:{" "}
+            {Math.round(
+              (filteredGoals.filter((g) => g.done).length /
+                filteredGoals.length) *
+                100
+            )}
+            %
+          </p>
+          <div className="w-full h-4 bg-purple-100 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-green-300 to-green-500 transition-all duration-500"
+              style={{
+                width: `${
+                  (filteredGoals.filter((g) => g.done).length /
+                    filteredGoals.length) *
+                  100
+                }%`,
+              }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* swtich from filters */}
       <div className="flex justify-center gap-5 mb-8">
@@ -216,8 +219,8 @@ export default function HabitList() {
         </tbody>
       </table>
       <p className="text-center mt-10 text-sm text-purple-400 italic">
-  “Small daily improvements are the key to staggering long-term results.” 
-</p>
+        “Small daily improvements are the key to staggering long-term results.”
+      </p>
     </div>
   );
 }

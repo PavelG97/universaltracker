@@ -52,7 +52,7 @@ const ChatBot = () => {
         ...msgs,
         {
           from: "bot",
-          text: "⚠️ I’m sorry, something went wrong. Please try again later.",
+          text: "I’m sorry, something went wrong. Please try again later.",
         },
       ]);
     } finally {

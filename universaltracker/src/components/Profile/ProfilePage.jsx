@@ -23,7 +23,7 @@ const ProfilePage = () => {
     apps: ["DailyNotes", "BudgetTransaction", "MyGoals"],
   };
 
-  // Pri načítaní stránky načítame avatar z localStorage
+  // Avatar 
   useEffect(() => {
     const savedAvatar = localStorage.getItem("userAvatar");
     if (savedAvatar) {
@@ -37,7 +37,7 @@ const ProfilePage = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         setAvatar(reader.result);
-        // Uložíme do localStorage ako Base64 string
+        // Save in localstorage
         localStorage.setItem("userAvatar", reader.result);
       };
       reader.readAsDataURL(file);
