@@ -12,9 +12,9 @@ export default function DailyNotes() {
   const [isEditing, setIsEditing] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const userId = localStorage.getItem("userId"); // musí byť nastavené pri login
+  const userId = localStorage.getItem("userId"); // need do be used in login
 
-  // Načítanie poznámok z backendu
+  // Loading from mongodb
   useEffect(() => {
     if (!userId) return;
     fetch(`http://localhost:5000/api/notes/${userId}`)
@@ -68,7 +68,7 @@ const handleAddNote = () => {
     .catch((err) => console.error("Add note error:", err));
 };
 
-  // Aktualizácia poznámky cez API (PUT)
+  // notes update
   const handleUpdateNote = (updatedNote) => {
     fetch(`http://localhost:5000/api/notes/${updatedNote._id}`, {
       method: "PUT",
@@ -87,7 +87,7 @@ const handleAddNote = () => {
       .catch((err) => console.error("Failed to update note:", err));
   };
 
-  // Vymazanie poznámky cez API
+  // delete from api
   const handleDeleteNote = (id) => {
     fetch(`http://localhost:5000/api/notes/${id}`, { method: "DELETE" })
       .then(() => {
