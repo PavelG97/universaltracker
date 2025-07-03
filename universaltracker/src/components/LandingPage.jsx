@@ -4,6 +4,7 @@ import { Target, Cpu, Activity } from "lucide-react";
 import AI from "../assets/AI.png";
 import Designer from "../assets/Designer.png";
 import ChatBot from "./Chatbot/ChatBot";
+import Logo from "../assets/logo.png";
 
 const LandingPage = () => {
   const [showChat, setShowChat] = useState(false);
@@ -16,18 +17,27 @@ const LandingPage = () => {
 
   return (
     <div className="font-sans text-gray-800 bg-gray-50 min-h-screen relative">
-      {/* Hero / Header */}
+      {/* Header */}
       <header className="bg-white shadow-md py-10 px-6 animate-fade-in-down">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 items-center">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">
-              Welcome to <span className="text-purple-600">Universal Tracker</span>
-            </h1>
+            <div className="flex items-center gap-3">
+              <img
+                src={AI}
+                alt="Universal Tracker logo"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-md shadow"
+              />
+              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">
+                Welcome to{" "}
+                <span className="text-purple-600">Universal Tracker</span>
+              </h1>
+            </div>
             <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
               Track your{" "}
               <span className="font-semibold text-yellow-600">goals</span>,{" "}
               <span className="font-semibold text-green-600">money</span>, and{" "}
-              <span className="font-semibold text-blue-600">daily routine</span> with a smart assistant by your side.
+              <span className="font-semibold text-blue-600">daily routine</span>{" "}
+              with a smart assistant by your side.
             </p>
             <div className="flex gap-5 flex-wrap pt-3">
               <Link
@@ -46,9 +56,9 @@ const LandingPage = () => {
           </div>
           <div className="flex justify-center md:justify-end mt-10 md:mt-0">
             <img
-              src={AI}
+              src={Logo}
               alt="AI Avatar"
-              className="w-36 h-36 object-cover rounded-full shadow-md border border-gray-200"
+              className="w-38 h-36 object-cover rounded-full shadow-md border border-gray-200"
             />
           </div>
         </div>
@@ -71,12 +81,15 @@ const LandingPage = () => {
         >
           <p className="italic text-gray-700">Hello! 👋 I'm your assistant.</p>
           <p className="mt-2 text-gray-800">
-            I’ll help you get started. Choose <strong>Login</strong> or <strong>Register</strong>, and begin tracking your{" "}
+            I’ll help you get started. Choose <strong>Login</strong> or{" "}
+            <strong>Register</strong>, and begin tracking your{" "}
             <span className="text-green-600 font-semibold">money</span>,{" "}
             <span className="text-blue-600 font-semibold">goals</span>, or{" "}
             <span className="text-purple-600 font-semibold">daily life</span>.
           </p>
-          <p className="mt-4 text-sm text-cyan-500 underline">Click here to chat with me!</p>
+          <p className="mt-4 text-sm text-cyan-500 underline">
+            Click here to chat with me!
+          </p>
         </div>
       </section>
 
@@ -88,19 +101,25 @@ const LandingPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {[
             {
-              icon: <Target className="w-12 h-12 mx-auto text-purple-600 mb-4 transition-transform duration-300 hover:scale-110" />,
+              icon: (
+                <Target className="w-12 h-12 mx-auto text-purple-600 mb-4 transition-transform duration-300 hover:scale-110" />
+              ),
               title: "Choose your path",
               desc: "Pick what you want to improve – goals, money, or your daily mindset.",
               number: "1",
             },
             {
-              icon: <Cpu className="w-12 h-12 mx-auto text-purple-600 mb-4 transition-transform duration-300 hover:scale-110" />,
+              icon: (
+                <Cpu className="w-12 h-12 mx-auto text-purple-600 mb-4 transition-transform duration-300 hover:scale-110" />
+              ),
               title: "Assistant helps you",
               desc: "Use the built-in assistant to get smart suggestions and summaries.",
               number: "2",
             },
             {
-              icon: <Activity className="w-12 h-12 mx-auto text-purple-600 mb-4 transition-transform duration-300 hover:scale-110" />,
+              icon: (
+                <Activity className="w-12 h-12 mx-auto text-purple-600 mb-4 transition-transform duration-300 hover:scale-110" />
+              ),
               title: "Watch your progress",
               desc: "Track your achievements, habits and progress visually every day.",
               number: "3",
@@ -114,7 +133,9 @@ const LandingPage = () => {
                 {number}
               </div>
               {icon}
-              <h3 className="font-semibold text-lg mb-2 text-gray-900">{title}</h3>
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">
+                {title}
+              </h3>
               <p className="text-gray-600 text-sm">{desc}</p>
             </div>
           ))}
@@ -145,7 +166,9 @@ const LandingPage = () => {
               key={title}
               className="p-6 border border-gray-300 rounded-xl text-center shadow-sm hover:shadow-md transition transform hover:-translate-y-1 hover:scale-105 bg-white cursor-default"
             >
-              <h3 className="text-lg font-semibold mb-2 text-gray-900">{title}</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                {title}
+              </h3>
               <p className="text-gray-600 text-sm">{desc}</p>
             </div>
           ))}
@@ -155,10 +178,13 @@ const LandingPage = () => {
       {/* About Project */}
       <section className="bg-white py-16 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">About this Project</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+            About this Project
+          </h2>
           <p className="text-gray-600 text-sm leading-relaxed">
-            This project was created as part of my final school project to showcase React, Tailwind CSS,
-            routing with React Router and basic UI/UX principles. The goal was to create a helpful productivity tool
+            This project was created as part of my final school project to
+            showcase React, Tailwind CSS, routing with React Router and basic
+            UI/UX principles. The goal was to create a helpful productivity tool
             for everyday users.
           </p>
         </div>
@@ -167,7 +193,7 @@ const LandingPage = () => {
       {/* Fixed ChatBot */}
       {showChat && (
         <div
-          className="fixed bottom-8 right-8 z-50 shadow-lg rounded-3xl overflow-hidden border-2 border-purple-600 bg-white transition-opacity duration-300"
+          className="fixed bottom-8 right-8 z-F50 shadow-lg rounded-3xl overflow-hidden border-2 border-purple-600 bg-white transition-opacity duration-300"
           aria-live="polite"
         >
           <ChatBot open={chatOpen} setOpen={setChatOpen} />
@@ -177,7 +203,7 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="bg-white border-t border-gray-300 text-center py-8 text-sm text-gray-500">
         <p className="mb-4">Follow us:</p>
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 mb-6">
           {[
             {
               href: "https://instagram.com",
@@ -206,7 +232,19 @@ const LandingPage = () => {
             </a>
           ))}
         </div>
-        <p className="mt-6">&copy; {new Date().getFullYear()} Universal Tracker – Created by Pavel Grega</p>
+
+        <div className="flex flex-col items-center gap-2 mb-4">
+          <img
+            src={Logo}
+            alt="Universal Tracker logo"
+            className="w-14 h-14 rounded-md shadow"
+          />
+        </div>
+
+        <p className="mt-4">
+          &copy; {new Date().getFullYear()} Universal Tracker – Created by Pavel
+          Grega
+        </p>
       </footer>
     </div>
   );

@@ -15,7 +15,7 @@ export default function NoteList({
 
         return (
           <div
-            key={note._id ?? note.id}  // preferuj _id, fallback na id
+            key={note._id ?? note.id} // preferuj _id, fallback na id
             className={`p-4 cursor-pointer hover:bg-gray-50 ${
               isActive ? "bg-amber-50" : ""
             }`}
@@ -32,7 +32,11 @@ export default function NoteList({
                     minute: "2-digit",
                   })}
                 </p>
-                <p className="mt-1 text-xs text-gray-500">{note.content}</p>
+                <p className="mt-1 text-xs text-gray-500">
+                  {note.content.length > 50
+                    ? note.content.substring(0, 50) + "..."
+                    : note.content}
+                </p>
               </div>
               <button
                 className="mt-2 text-red-500 hover:text-red-800 cursor-pointer max-w-max bg-transparent"

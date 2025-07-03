@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import { useBudget } from "../context/BudgetContext";
 
 const categories = [
-  "Other",
-  "Freelance",
-  "Investments",
-  "Food",
-  "Transports",
+  "Uncategorized",
+  "Housing",
+  "Groceries",
+  "Transport",
+  "Bills & Utilities",
   "Entertainment",
-  "Bills",
   "Shopping",
+  "Health",
+  "Freelance Income",
   "Salary",
+  "Investments",
+  "Other Income",
+  "Savings",
 ];
 
 export default function TransactionForm() {

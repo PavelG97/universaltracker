@@ -19,7 +19,7 @@ const handleSubmit = async (e) => {
 
     if (res.ok) {
       localStorage.setItem("token", data.token);
-      localStorage.setItem("userId", data.userId);  // TU
+      localStorage.setItem("userId", data.userId);  
       alert(data.message);
       navigate("/home");
     } else {

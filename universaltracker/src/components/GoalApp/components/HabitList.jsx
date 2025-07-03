@@ -26,7 +26,7 @@ export default function HabitList() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          message: `Give me one short unique  ${filter} personal goal I could track. Reply with only the goal itself.`,
+          message: `Give me a short ${filter} personal goal I could track wirte it really short and try it always write unique not the same ...`,
         }),
       });
       const data = await res.json();

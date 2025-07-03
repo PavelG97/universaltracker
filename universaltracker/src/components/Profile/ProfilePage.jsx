@@ -63,7 +63,7 @@ const ProfilePage = () => {
           <p className="text-gray-600 mt-1 text-lg">{user.email}</p>
 
           <label className="mt-4 inline-block cursor-pointer text-purple-600 hover:text-purple-800 font-semibold">
-            Change Pohto
+            Change Photo
             <input
               type="file"
               accept="image/*"

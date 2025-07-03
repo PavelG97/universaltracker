@@ -5,7 +5,7 @@ function NoteEditor({ notes, onSave }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  // Synchronizuj stav, keď sa zmení `notes`
+// sycnhronization after notes change
   useEffect(() => {
     setTitle(notes?.title || "");
     setContent(notes?.content || "");
