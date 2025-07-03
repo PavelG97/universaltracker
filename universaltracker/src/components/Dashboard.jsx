@@ -16,9 +16,9 @@ const Dashboard = () => {
   return (
     <div style={{ padding: "2rem", textAlign: "center" }}>
       <h1>Welcome to your Dashboard!</h1>
-      <p>Spravuj svoje ciele, sleduj progres a viac...</p>
+      <p>Still in progress...</p>
       <button onClick={handleGoToApp} style={{ marginRight: "1rem" }}>
-        Prejsť do aplikácie
+        Go to mainpage
       </button>
       <button onClick={handleLogout}>Odhlásiť sa</button>
     </div>
