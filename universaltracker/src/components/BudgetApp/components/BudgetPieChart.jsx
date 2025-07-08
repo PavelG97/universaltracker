@@ -51,7 +51,7 @@ const BudgetPieChart = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          message: `Analyze my budget breakdown: ${summary}. Give me one useful short tip to save money or manage finances better write it short without thick text dont us bold text`,
+          message: `Analyze my budget breakdown: ${summary}. Give me one useful short tip to save money and manage finances better write it short without thick text dont us bold text`,
         }),
       });
 
